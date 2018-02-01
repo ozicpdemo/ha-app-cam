@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: cam-logs-pv
+  namespace: services
+  labels:
+    type: cam-logs
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    -  ReadWriteMany
+  nfs:
+    server: 10.0.0.1
+    path: /storage/CAM_logs

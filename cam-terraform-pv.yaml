@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: cam-terraform-pv
+  namespace: services
+  labels:
+    type: cam-terraform
+spec:
+  capacity:
+    storage: 15Gi
+  accessModes:
+    -  ReadWriteMany
+  nfs:
+    server: 10.0.0.1
+    path: /storage/CAM_terraform
